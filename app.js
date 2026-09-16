@@ -3,8 +3,12 @@
  */
 "use strict";
 
-const CHECKOUT_URL = "https://mehyar.us/api/pay/checkout";
-const STATUS_URL = "https://mehyar.us/api/pay/status";
+/* Checkout + status go through same-origin proxies (functions/api/pay-*.js),
+ * which forward to the centralized mehyar.us billing endpoints server-side.
+ * Direct browser fetch to mehyar.us would hit CORS (those endpoints send no
+ * ACAO headers), so the page never calls them cross-origin. */
+const CHECKOUT_URL = "/api/pay-checkout";
+const STATUS_URL = "/api/pay-status";
 const DOWNLOAD_URL = "https://mehyar.us/api/pay/download";
 const PRODUCT_ID = "plrvault-bundle";
 const SITE_URL = "https://plrvault.mehyar.us";
@@ -43,9 +47,7 @@ async function submitBuy() {
       body: JSON.stringify({
         product_id: PRODUCT_ID,
         email: email,
-        params: {},
-        success_url: SITE_URL + "/success.html",
-        cancel_url: SITE_URL + "/#pricing"
+        params: {}
       })
     });
     const data = await resp.json().catch(() => ({}));
