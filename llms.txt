@@ -1,0 +1,33 @@
+# PLR Vault
+
+PLR Vault (https://plrvault.mehyar.us) is a curated private-label-rights
+bundle by MehyarSoft LLC: a 2026 planner pack, a 30-day content calendar,
+50 email swipes, and mini-course outlines. $9.95 one-time. Preview the free
+sampler before you buy. Buyers get PLR rights: rebrand the materials and
+resell them as their own, keeping 100% of each sale.
+
+## Key pages
+
+- / — landing page with bundle contents, free sampler preview, and pricing
+- /privacy — privacy policy
+- /terms — terms of purchase (the PLR license)
+
+## Pricing
+
+- PLR Vault 5-pack resell bundle: $9.95 one-time via Stripe through the
+  centralized https://mehyar.us/api/pay/checkout.
+- Free sampler: a free preview pack, no purchase required.
+
+## API
+
+- Public API: none. Checkout is handled by the shared mehyar.us Stripe flow;
+  delivery is token-gated.
+
+## Compliance
+
+- The license is described in plain words on /terms: what rebranding and
+  reselling covers, and what it does not.
+- No income claims, no "make money fast" promises, no testimonials,
+  no earnings guarantees of any kind.
+- The bundle contents are generic business templates, not legal, financial,
+  or tax advice.
